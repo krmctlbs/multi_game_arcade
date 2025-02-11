@@ -1,0 +1,60 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+    id 'com.google.gms.google-services' // This should be applied at the bottom of the file
+}
+
+android {
+    namespace = "com.example.multi_game_arcade"
+    compileSdk = flutter.compileSdkVersion // This should refer to the SDK version defined in your Flutter project
+
+    ndkVersion = flutter.ndkVersion // Ensure this is defined in your Flutter project
+
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 23 // This is correct as per Firebase requirements
+        multiDexEnabled true
+        applicationId = "com.example.multi_game_arcade" // Ensure this matches your app ID
+        targetSdk = flutter.targetSdkVersion // This should refer to the SDK version defined in your Flutter project
+        versionCode = flutter.versionCode // Make sure these are defined in your Flutter project
+        versionName = flutter.versionName // Make sure these are defined in your Flutter project
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            signingConfig = signingConfigs.debug // Use debug signing for now
+        }
+    }
+}
+
+flutter {
+    source = "../.." // Ensure this points to the correct location of your Flutter project
+}
+
+dependencies {
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:33.7.0')
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    // For example, to use Firebase Authentication and Firestore, you would add:
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+    // When using the BoM, don't specify versions in Firebase dependencies
+    // https://firebase.google.com/docs/android/setup#available-libraries
+}
+
+// Apply the Google Services plugin at the bottom of the file
+apply plugin: 'com.google.gms.google-services'
