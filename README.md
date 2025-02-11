@@ -2,8 +2,11 @@
 
 
 To use this project with Firebase, follow these steps:
+
 -Create a new project with the Firebase console
+
 -Enable Firebase Authentication
+
 -Enable Cloud Firestore
 
 
