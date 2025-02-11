@@ -1,4 +1,10 @@
 # multi_game_arcade
+A Flutter app contains games:
+
+Single-player(tetris, 2048), AI-opponent(tic tac toe), and multiplayer(tic tac toe) with firestore database.
+
+Easy to implement new games for further development.
+
 
 
 To use this project with Firebase, follow these steps:
