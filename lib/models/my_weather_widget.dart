@@ -10,7 +10,7 @@ class MyWeatherWidget extends StatefulWidget {
 }
 
 class _MyWeatherWidgetState extends State<MyWeatherWidget> {
-  final WeatherFactory _wf = WeatherFactory('5dfb22dd23bffff6a6fdd6e75b52a38e');
+  final WeatherFactory _wf = WeatherFactory('your_openweather_api_key');
   Weather? _weather;
   String _message = '';
   bool _isLoading = true;
