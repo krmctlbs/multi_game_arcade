@@ -1,10 +1,11 @@
 # multi_game_arcade
 
-A new Flutter project.
-A new branch develop is generated for the game developing.
-## Getting Started
 
-This project is a starting point for a Flutter application.
+To use this project with Firebase, follow these steps:
+-Create a new project with the Firebase console
+-Enable Firebase Authentication
+-Enable Cloud Firestore
+
 
 A few resources to get you started if this is your first Flutter project:
 
